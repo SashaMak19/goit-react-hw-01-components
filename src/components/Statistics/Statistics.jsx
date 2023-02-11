@@ -1,4 +1,4 @@
-import PropTypes, { arrayOf, shape } from 'prop-types';
+import PropTypes from 'prop-types';
 
 function Statistics({ title, stats }) {
   return (

@@ -35,7 +35,7 @@ export const App = () => {
       {/* ----------------3------------------- */}
       <FriendList friends={friends} />
       {/* -------------------4---------------- */}
-      {/* <TransactionHistory items={transactions} /> */}
+      <TransactionHistory items={transactions} />
     </div>
   );
 };
