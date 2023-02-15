@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
-import FriendListItem from './FriendListItem';
-import './FriendList.styled.jsx';
+import FriendListItem from '../FriendListItem/FriendListItem';
+import { List } from './FriendList.styled.jsx';
 
 function FriendList({ friends }) {
   const listItem = friends.map(({ id, avatar, name, isOnline }) => (
     <FriendListItem key={id} avatar={avatar} name={name} isOnline={isOnline} />
   ));
 
-  return <ul className="friend-list">{listItem}</ul>;
+  return <List>{listItem}</List>;
 }
 
 FriendList.propTypes = {

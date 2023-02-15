@@ -1,29 +1,39 @@
 import PropTypes, { shape } from 'prop-types';
+import {
+  Container,
+  Description,
+  UserName,
+  UserInfo,
+  StatisticsList,
+  StatisticsItem,
+  StatisticsName,
+  StatisticsAmount,
+} from './Profile.styled';
 
 const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
-    <div className="profile">
-      <div className="description">
+    <Container>
+      <Description>
         <img src={avatar} alt="User avatar" className="avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location}</p>
-      </div>
-      <ul className="stats">
-        <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{stats.followers}</span>
-        </li>
-        <li>
-          <span className="label">Views</span>
-          <span className="quantity">{stats.views}</span>
-        </li>
-        <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{stats.likes}</span>
-        </li>
-      </ul>
-    </div>
+        <UserName>{username}</UserName>
+        <UserInfo>@{tag}</UserInfo>
+        <UserInfo>{location}</UserInfo>
+      </Description>
+      <StatisticsList>
+        <StatisticsItem>
+          <StatisticsName>Followers</StatisticsName>
+          <StatisticsAmount>{stats.followers}</StatisticsAmount>
+        </StatisticsItem>
+        <StatisticsItem>
+          <StatisticsName>Views</StatisticsName>
+          <StatisticsAmount>{stats.views}</StatisticsAmount>
+        </StatisticsItem>
+        <StatisticsItem>
+          <StatisticsName>Likes</StatisticsName>
+          <StatisticsAmount>{stats.likes}</StatisticsAmount>
+        </StatisticsItem>
+      </StatisticsList>
+    </Container>
   );
 };
 

@@ -4,7 +4,7 @@ import friends from '../data/friends.json';
 import transactions from '../data/transactions.json';
 import Profile from './Profile/Profile';
 import Statistics from './Statistics/Statistics';
-import FriendList from './friendList/FriendList';
+import FriendList from './FriendList/FriendList';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
 
 export const App = () => {
@@ -19,7 +19,6 @@ export const App = () => {
     //   color: '#010101',
     // }}
     >
-      {/* ---------------1 --------------*/}
       {
         <Profile
           username={user.username}
@@ -29,12 +28,8 @@ export const App = () => {
           stats={user.stats}
         />
       }
-      {/* ------------------2----------------- */}
       <Statistics title={'Upload stats'} stats={data} />
-      <Statistics stats={data} />
-      {/* ----------------3------------------- */}
       <FriendList friends={friends} />
-      {/* -------------------4---------------- */}
       <TransactionHistory items={transactions} />
     </div>
   );
